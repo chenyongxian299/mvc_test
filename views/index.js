@@ -7,10 +7,20 @@ $(document).ready(function(){
 });
 function views_index_get(){
     $.ajax({
-        url: 'index/get.do',
+        url: '/test/test/get.do',
+        type: 'POST',
+        dataType: 'JSON',
+        success: function(res){
+            console.log(res);
+        }
+    })
+}
+function views_index_add(){
+    $.ajax({
+        url: '/test/test/add.do',
         type: 'POST',
         data: {
-            id : $('[name="views_index_ipt_id"]').val()
+            id : $('[name="views_index_ipt_test_name"]').val()
         },
         dataType: 'JSON',
         success:function(res){
